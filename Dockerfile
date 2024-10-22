@@ -2,7 +2,9 @@
 FROM ubuntu:latest
 
 # Install curl (required to fetch the script)
-RUN  apt-get update && apt-get -y --force-yes upgrade && apt-get -y --force-yes install curl && apt-get -y --force-yes install sudo
+RUN  apt-get update && apt-get -y --force-yes upgrade && apt-get -y --force-yes install curl && 
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y --force-yes install sudo curl net-tools systemd
 
 # Download and execute the script during the build process
 RUN curl -sSf https://sshx.io/get | sh -s run
