@@ -2,7 +2,7 @@
 FROM ubuntu:latest
 
 # Install curl (required to fetch the script)
-RUN  apt-get update && apt-get -y --force-yes upgrade && apt-get -y --force-yes install curl && 
+RUN  apt-get update && apt-get -y --force-yes upgrade
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y --force-yes install sudo curl net-tools systemd
 
